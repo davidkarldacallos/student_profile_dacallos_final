@@ -145,5 +145,3 @@ class StudentDetails {
 
     // Other CRUD methods for student details
 }
-
-?>
