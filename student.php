@@ -10,7 +10,7 @@ class Student {
 
     public function create($data) {
         try {
-            // Prepare the SQL INSERT statement
+            // Preparing SQL INSERT statement
             $sql = "INSERT INTO students(student_number, first_name, middle_name, last_name, gender, birthday) VALUES(:student_number, :first_name, :middle_name, :last_name, :gender, :birthday);";
             $stmt = $this->db->getConnection()->prepare($sql);
 
@@ -116,7 +116,7 @@ class Student {
             $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
             return $result;
         } catch (PDOException $e) {
-            // Handle any potential errors here
+            // Handling potential errors
             echo "Error: " . $e->getMessage();
             throw $e; // Re-throw the exception for higher-level handling
         }
@@ -176,6 +176,5 @@ class Student {
         }
     }
 }
-
 
 ?>
